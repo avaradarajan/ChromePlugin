@@ -12,10 +12,22 @@
 
   "browser_action": {
     "default_icon": "icon167.png",
-    "default_popup": "popup.html"
+    "default_popup": "notification.html"
   },
+  "background": {
+    "scripts": ["event.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://my.mskcc.org/*"],
+      "js": ["jquery-3.3.1.min.js","contentscript.js"]
+    }
+  ],
   "permissions": [
     "storage",
-    "notifications"
+    "notifications",
+    "tabs",
+    "https://my.mskcc.org/*"
   ]
 }
