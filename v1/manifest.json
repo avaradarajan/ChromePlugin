@@ -20,14 +20,16 @@
   },
   "content_scripts": [
     {
-      "matches": ["https://my.mskcc.org/*"],
-      "js": ["jquery-3.3.1.min.js","contentscript.js"]
+      "all_frames": true,
+      "matches": ["https://*/*","http://*/*"],
+      "js": ["jquery-3.3.1.min.js","csnew.js"]
     }
   ],
   "permissions": [
     "storage",
     "notifications",
     "tabs",
-    "https://my.mskcc.org/*"
+    "https://*/*",
+    "http://*/*"
   ]
 }
